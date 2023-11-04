@@ -32,7 +32,7 @@ function Header() {
             <div style={{ width: "200px" }}>
               <img
                 src="https://png.pngtree.com/png-clipart/20230924/original/pngtree-farm-circle-logo-vector-illustration-health-shape-summer-vector-png-image_12586449.png"
-                alt="farm-logo"
+                alt="farm-logo-yash"
                 style={{
                   width: "70px",
                   height: "70px",
