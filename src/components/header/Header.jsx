@@ -26,7 +26,7 @@ function Header() {
 
   return (
     <>
-      <AppBar position="static" sx={{ bgcolor: "green" }}>
+      <AppBar position="fixed" sx={{ bgcolor: "green" }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <div style={{ width: "200px" }}>
