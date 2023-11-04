@@ -6,27 +6,40 @@ import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import GlobalStyles from "@mui/material/GlobalStyles";
 import Container from "@mui/material/Container";
+import Divider from "@mui/material/Divider";
+import { Box } from "@material-ui/core";
 
-function Copyright(props) {
+const Copyright = (props) => {
   return (
-    <Container  maxWidth="lg" sx={{ bgcolor: "grey", p: 1 ,borderRadius:2}} >
-      <Typography
-        style={{ color: "white", fontWeight: "bold" }}
-        variant="footer"
-        color="text.primary"
-        align="center"
-        {...props}
+    <Grid container spacing={2}>
+      <Grid
+        item
+        xs={12}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          height: "15vh",
+          color: "greenyellow",
+        }}
       >
-        {"Copyright © "}
-        <Link color="inherit" href="#">
-          Farm-Skills
-        </Link>{" "}
-        {new Date().getFullYear()}
-        {"."}
-      </Typography>
-    </Container>
+        <Typography
+          style={{ color: "white", fontWeight: "bold" }}
+          variant="footer"
+          color="text.secondary"
+          align="center"
+          {...props}
+        >
+          {"Copyright © "}
+          <Link color="inherit" href="#">
+            Farm-Skills
+          </Link>{" "}
+          {new Date().getFullYear()}
+          {"."}
+        </Typography>
+      </Grid>
+    </Grid>
   );
-}
+};
 
 const footers = [
   {
@@ -77,15 +90,11 @@ function Footer() {
           sx={{
             borderTop: (theme) => `1px solid ${theme.palette.divider}`,
             mt: 8,
-            py: [3, 6],
+            // py: [1, 2],
             bgcolor: "#0b7003",
           }}
         >
-          <Grid
-            container
-            spacing={{ xs: 2, md: 4 }}
-            justifyContent="space-evenly"
-          >
+          <Grid container justifyContent="space-evenly">
             {footers.map((footer) => (
               <Grid item xs={6} sm={6} md={3} key={footer.title}>
                 <Typography
@@ -111,11 +120,15 @@ function Footer() {
               </Grid>
             ))}
           </Grid>
+          <Container
+            maxWidth="md-container"
+            sx={{ width: "100%", borderTop: "0px solid black", my: 4 }}
+          >
+            <Divider sx={{ mt: 5 }} />
+            <Copyright />
+          </Container>
         </Container>
       </ThemeProvider>
-      <Container maxWidth="lg" sx={{ width:"100%"}}>
-        <Copyright />
-      </Container>
     </>
   );
 }
